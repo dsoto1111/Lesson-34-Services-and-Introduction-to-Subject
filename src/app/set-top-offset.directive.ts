@@ -9,7 +9,9 @@ export class SetTopOffsetDirective {
     constructor(private el: ElementRef, private navHeightSvc: NavHeightService) { 
         this.position = 'relative';
         this.navHeightSvc.heightListener.subscribe((value: string) => {
-            this.top = value + 'px';
+            setTimeout(() => {
+                this.top = value + "px";
+            });
         });
     }
 
